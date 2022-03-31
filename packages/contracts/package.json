@@ -1,0 +1,24 @@
+{
+  "name": "@montechkit/contracts",
+  "version": "1.0.0",
+  "description": "Contract for kit",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "chain": "hardhat node --network hardhat --show-stack-traces",
+    "deploy": "mkdirp deployments && hardhat deploy --network hardhat --export-all ../app/src/contracts.json",
+    "deploy:testnet": "mkdirp deployments && hardhat deploy --network testnet --export-all ../app/src/contracts.json",
+    "deploy:mainnet": "mkdirp deployments && hardhat deploy --network mainnet --export-all ../app/src/contracts.json"
+  },
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.4",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "chai": "^4.3.4",
+    "ethereum-waffle": "^3.4.0",
+    "ethers": "^5.5.3",
+    "hardhat": "^2.8.2"
+  },
+  "dependencies": {
+    "dotenv": "^11.0.0"
+  }
+}

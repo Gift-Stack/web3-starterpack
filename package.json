@@ -1,0 +1,44 @@
+{
+  "name": "@montechkit/kit",
+  "version": "1.0.0",
+  "description": "A starter codebase for web3 mono repo projects at montech",
+  "author": "Montech Engineering",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev":"yarn workspace @montechkit/app dev",
+    "build": "yarn workspace @montechkit/app build",
+    "clean": "rm -rf packages/app/build && rm -rf packages/contracts/artifacts && rm -rf packages/contracts/cache && rm -rf packages/contracts/types",
+    "start": "yarn workspace @montechkit/app start",
+    "chain": "yarn workspace @montechkit/contracts chain",
+    "deploy": "yarn workspace @montechkit/contracts deploy",
+    "deploy:mainnet": "yarn workspace @montechkit/contracts deploy:mainnet",
+    "deploy:testnet": "yarn workspace @montechkit/contracts deploy:testnet",
+    "export": "yarn workspace @montechkit/contracts export",
+    "flatten": "cd packages/contracts && npx hardhat flatten",
+    "fork": "yarn workspace @montechkit/contracts fork",
+    "generate": "yarn workspace @montechkit/contracts generate",
+    "matrix": "yarn workspace @montechkit/contracts matrix",
+    "mineContractAddress": "cd packages/contracts && npx contracts mineContractAddress",
+    "node": "yarn workspace @montechkit/contracts chain",
+    "send": "yarn workspace @montechkit/contracts send",
+    "test": "yarn workspace @montechkit/contracts test",
+    "wallet": "cd packages/contracts && npx contracts wallet",
+   
+    "lab": "yarn workspace @montechkit/lab start",
+
+    "format": "yarn workspace @montechkit/app format && yarn workspace @montechkit/contracts format",
+    "postinstall": "rimraf node_modules/babel-loader"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/@openzeppelin/contracts-upgradeable/**",
+      "**/@openzeppelin/contracts",
+      "**/@montechkit/framework",
+      "**/@montechkit/solidity"
+    ]
+  }
+}
